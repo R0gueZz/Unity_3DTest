@@ -60,7 +60,7 @@ public class MoveProduct : MonoBehaviour
         {
             lerpProb += Time.deltaTime / lerpDuration;
             lerpProb = Mathf.Clamp01(lerpProb);
-            rb.velocity = moveForward * m_Speed * lerpProb + new Vector3(0, rb.velocity.y, 0);
+            rb.velocity = moveForward.normalized * m_Speed * lerpProb + new Vector3(0, rb.velocity.y, 0);
             Quaternion rotation = Quaternion.LookRotation(moveForward);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * smooth);
             anim.SetFloat("Blend", value);

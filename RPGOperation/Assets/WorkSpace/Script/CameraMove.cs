@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    float x, y;
+    float xAngle, yAngle;
     [SerializeField]
     float xsensi, ysensi;
+    [SerializeField]
+    float angleMin, angleMax;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +28,10 @@ public class CameraMove : MonoBehaviour
 
     void CameraSystem()
     {
-        x += Input.GetAxis("Horizontal2") * xsensi;
-        y += Input.GetAxis("Vertical2") * ysensi;
+        xAngle += Input.GetAxis("Horizontal2") * xsensi;
+        yAngle += Input.GetAxis("Vertical2") * ysensi;
 
-        transform.rotation = Quaternion.Euler(y, x, 0);
+        yAngle = Mathf.Clamp(yAngle,angleMin,angleMax);
+        transform.rotation = Quaternion.Euler(yAngle, xAngle, 0);
     }
 }
