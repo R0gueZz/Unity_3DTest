@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Casual Tiny Environment - Jungle Set/Scene/Jungle 1.unity
+    guid: d104b560172e1394aa79ce2d21f4e3c0
   m_configObjects: {}
