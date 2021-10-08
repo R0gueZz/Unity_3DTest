@@ -698,6 +698,10 @@ PrefabInstance:
       value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 2554846472953049940, guid: 1188e69b52c2af045af0ac5c616d31d1, type: 3}
+      propertyPath: rollPower
+      value: 6.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554846472953049940, guid: 1188e69b52c2af045af0ac5c616d31d1, type: 3}
       propertyPath: lerpDuration
       value: 0.5
       objectReference: {fileID: 0}

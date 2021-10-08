@@ -12,6 +12,8 @@ public class MoveProduct : MonoBehaviour
     [SerializeField]
     float m_Speed;
     [SerializeField]
+    float rollPower;
+    [SerializeField]
     float smooth;
     [SerializeField]
     float lerpDuration;
@@ -19,12 +21,7 @@ public class MoveProduct : MonoBehaviour
     float lerpProb;
     float horizontal, vertical;
 
-    public static float CubicIn(float t, float totaltime, float min, float max)
-    {
-        max -= min;
-        t /= totaltime;
-        return max * t * t * t + min;
-    }
+    bool isRoll = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,22 +32,25 @@ public class MoveProduct : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveInput();
+        if (Input.GetButtonDown("Fire2") && !isRoll)
+        {
+            Rolling();
+        }
     }
 
     private void FixedUpdate()
     {
-        Move();
-    }
-
-    void MoveInput()
-    {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
+        if (!isRoll)
+        {
+            Move();
+        }
     }
 
     void Move()
     {
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
+
         Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
         Vector3 moveForward = cameraForward * vertical + Camera.main.transform.right * horizontal;
 
@@ -71,5 +71,22 @@ public class MoveProduct : MonoBehaviour
             lerpProb = Mathf.Clamp01(lerpProb);
             anim.SetFloat("Blend", value);
         }
+    }
+
+    void Rolling()
+    {
+        anim.SetBool("Roll", true);
+        rb.velocity = Vector3.zero;
+        Vector3 rollVec = gameObject.transform.rotation * new Vector3(0, 0, rollPower);
+        rb.AddForce(rollVec, ForceMode.Impulse);
+    }
+
+    //--------------//
+    //AnimationEvent//
+    //--------------//
+    void roll_End()
+    {
+        anim.SetBool("Roll", false);
+        isRoll = false;
     }
 }
