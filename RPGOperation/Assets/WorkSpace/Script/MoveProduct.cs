@@ -58,7 +58,7 @@ public class MoveProduct : MonoBehaviour
 
         if (moveForward.magnitude > 0.01f)
         {
-            lerpProb = CubicIn(lerpProb,1f,moveForward.magnitude,1);
+            lerpProb += Time.deltaTime / lerpDuration;
             lerpProb = Mathf.Clamp01(lerpProb);
             rb.velocity = moveForward * m_Speed * lerpProb + new Vector3(0, rb.velocity.y, 0);
             Quaternion rotation = Quaternion.LookRotation(moveForward);

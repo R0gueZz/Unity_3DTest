@@ -469,6 +469,14 @@ PrefabInstance:
       propertyPath: ysensi
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 2554846472953049940, guid: 1188e69b52c2af045af0ac5c616d31d1, type: 3}
+      propertyPath: m_Speed
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554846472953049940, guid: 1188e69b52c2af045af0ac5c616d31d1, type: 3}
+      propertyPath: lerpDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2839759906945463026, guid: 1188e69b52c2af045af0ac5c616d31d1, type: 3}
       propertyPath: m_RootOrder
       value: 3
