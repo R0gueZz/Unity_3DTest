@@ -13,7 +13,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses: []
@@ -82,7 +82,7 @@ Material:
     - _RimLift: 0
     - _RimLightingMix: 0
     - _ShadeShift: -1
-    - _ShadeToony: 0.08
+    - _ShadeToony: 0.55
     - _ShadingGradeRate: 1
     - _SrcBlend: 1
     - _UvAnimRotation: 0
@@ -92,7 +92,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _OutlineColor: {r: 0.27450982, g: 0.09019608, b: 0.1254902, a: 1}
+    - _OutlineColor: {r: 0.6509434, g: 0.6288359, b: 0.6288359, a: 1}
     - _RimColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ShadeColor: {r: 0.97, g: 0.81, b: 0.86, a: 1}
+    - _ShadeColor: {r: 0.509434, g: 0.34314704, b: 0.38970742, a: 1}
   m_BuildTextureStacks: []

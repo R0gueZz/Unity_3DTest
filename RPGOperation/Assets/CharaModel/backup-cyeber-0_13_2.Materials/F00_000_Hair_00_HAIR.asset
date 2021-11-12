@@ -82,7 +82,7 @@ Material:
     - _RimLift: 0
     - _RimLightingMix: 0
     - _ShadeShift: -1
-    - _ShadeToony: 0.08
+    - _ShadeToony: 0.008
     - _ShadingGradeRate: 1
     - _SrcBlend: 1
     - _UvAnimRotation: 0
@@ -91,8 +91,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.9112396, g: 0.84724325, b: 0.77819866, a: 1}
-    - _EmissionColor: {r: 0.110819645, g: 0.110819645, b: 0.110819645, a: 1}
+    - _EmissionColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
     - _OutlineColor: {r: 0.33666006, g: 0.33666006, b: 0.15890355, a: 1}
     - _RimColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ShadeColor: {r: 0.83035725, g: 0.75898516, b: 0.68421435, a: 1}
+    - _ShadeColor: {r: 0.4716981, g: 0.4214133, b: 0.3711285, a: 1}
   m_BuildTextureStacks: []

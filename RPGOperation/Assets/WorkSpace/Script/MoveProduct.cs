@@ -8,7 +8,8 @@ public class MoveProduct : MonoBehaviour
 {
     Rigidbody rb;
     Animator anim;
-
+    [SerializeField]
+    Camera cam;
     [SerializeField]
     float m_Speed;
     [SerializeField]
@@ -51,16 +52,16 @@ public class MoveProduct : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
-        Vector3 moveForward = cameraForward * vertical + Camera.main.transform.right * horizontal;
+        Vector3 cameraForward = Vector3.Scale(cam.transform.forward, new Vector3(1, 0, 1)).normalized;
+        Vector3 moveForward = cameraForward * vertical + cam.transform.right * horizontal;
 
         float value = Mathf.Lerp(moveForward.magnitude, 1, lerpProb);
 
-        if (moveForward.magnitude > 0.01f)
+        if (moveForward.sqrMagnitude > 0.1f)
         {
             lerpProb += Time.deltaTime / lerpDuration;
             lerpProb = Mathf.Clamp01(lerpProb);
-            rb.velocity = moveForward.normalized * m_Speed * lerpProb + new Vector3(0, rb.velocity.y, 0);
+            rb.velocity = moveForward.normalized * m_Speed * value + new Vector3(0, rb.velocity.y, 0);
             Quaternion rotation = Quaternion.LookRotation(moveForward);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * smooth);
             anim.SetFloat("Blend", value);

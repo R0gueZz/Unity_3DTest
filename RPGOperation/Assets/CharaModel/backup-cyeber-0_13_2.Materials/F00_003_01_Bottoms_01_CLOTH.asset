@@ -75,14 +75,14 @@ Material:
     - _OutlineCullMode: 1
     - _OutlineLightingMix: 1
     - _OutlineScaledMaxDistance: 1
-    - _OutlineWidth: 0.15230264
+    - _OutlineWidth: 0.14
     - _OutlineWidthMode: 1
     - _ReceiveShadowRate: 1
     - _RimFresnelPower: 1
     - _RimLift: 0
     - _RimLightingMix: 0
     - _ShadeShift: -1
-    - _ShadeToony: 0.5
+    - _ShadeToony: 0.008
     - _ShadingGradeRate: 1
     - _SrcBlend: 1
     - _UvAnimRotation: 0
@@ -92,7 +92,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _OutlineColor: {r: 0.27450982, g: 0.09019608, b: 0.1254902, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ShadeColor: {r: 0.8117647, g: 0.8392157, b: 0.96862745, a: 1}
+    - _ShadeColor: {r: 0.5833927, g: 0.60511976, b: 0.7075472, a: 1}
   m_BuildTextureStacks: []
